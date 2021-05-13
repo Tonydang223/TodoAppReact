@@ -9,8 +9,10 @@ const FormTodos = ({addTodo,edit,editItem}) => {
     })
     const onSubmit =(e)=>{
         e.preventDefault();
-        if (!value) return;
-        if(value.name === ''|| value.age === '' || value.message === '')return false;
+        if(value.description === ''||  value.name === '' || value.message === ''
+        ) return alert("Input Field is not empty")
+        else if(value.name.length >= 6)
+        return  alert("Name is not than 6 characters")
         else{
             if(!edit){
                 addTodo(value);

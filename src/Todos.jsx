@@ -25,7 +25,7 @@ const Todos = () => {
     }
     const today = new Date();
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "October", "Nov", "Dec"];
-    const date = today.getFullYear() + '-' + (months[today.getMonth() + 1]) + '-' + today.getDate()+'--'+ today.getHours()+':'+today.getMinutes()+':'+today.getSeconds();
+    const date = today.getFullYear() + '-' + (months[today.getMonth()]) + '-' + today.getDate()+'--'+ today.getUTCHours()+':'+today.getUTCMinutes()+':'+today.getUTCSeconds();
     console.log(todos)
     return (
         <div className="container">
