@@ -23,10 +23,7 @@ const Todos = () => {
         setTodos(newValues);
         setEdit(null)
     }
-    const today = new Date();
-    var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "October", "Nov", "Dec"];
-    const date = today.getFullYear() + '-' + (months[today.getMonth()]) + '-' + today.getDate()+'--'+ today.getUTCHours()+':'+today.getUTCMinutes()+':'+today.getUTCSeconds();
-    console.log(todos)
+
     return (
         <div className="container">
             <h2>Todo App</h2>
@@ -34,7 +31,7 @@ const Todos = () => {
             {todos.map(todo=>(
                 <div key={todo.id} className="todos-list">
                     <div className="right">
-                    <p>{date}</p>
+                    <p>{todo.date}</p>
                     <h3>Description: {todo.description}</h3>
                     </div>
                     <div className="between">

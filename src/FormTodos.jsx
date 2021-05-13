@@ -6,6 +6,7 @@ const FormTodos = ({addTodo,edit,editItem}) => {
         description:'',
         name:'',
         message:'',
+        date:'',
     })
     const onSubmit =(e)=>{
         e.preventDefault();
@@ -31,9 +32,11 @@ const FormTodos = ({addTodo,edit,editItem}) => {
 
         }
     }
-    
+    const today = new Date();
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "October", "Nov", "Dec"];
+    const date = today.getFullYear() + '-' + (months[today.getMonth()]) + '-' + today.getDate()+'--'+ today.toLocaleTimeString();
     const onChange = (e)=>{
-    setValue({...value,[e.target.name]: e.target.value})
+    setValue({...value,[e.target.name]: e.target.value, date: date})
     }
     useEffect(() => {
         if(edit){
